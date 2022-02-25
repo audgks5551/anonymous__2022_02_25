@@ -1,4 +1,4 @@
-package clone.anonymous.core.entity.entity;
+package clone.anonymous.core.entity;
 
 import lombok.Getter;
 import lombok.Setter;
