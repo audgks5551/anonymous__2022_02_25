@@ -6,5 +6,8 @@
   },
   "scripts": {
     "css": "npx tailwindcss -i ./src/main/resources/static/css/tailwind.source.css -o ./src/main/resources/static/css/tailwind.output.css --watch"
+  },
+  "dependencies": {
+    "daisyui": "^2.2.2"
   }
 }
