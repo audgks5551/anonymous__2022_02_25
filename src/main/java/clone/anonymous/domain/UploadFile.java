@@ -1,4 +1,4 @@
-package clone.anonymous.article.entity;
+package clone.anonymous.domain;
 
 import lombok.*;
 

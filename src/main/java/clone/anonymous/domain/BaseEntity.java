@@ -1,4 +1,4 @@
-package clone.anonymous.core.entity;
+package clone.anonymous.domain;
 
 import lombok.Getter;
 import lombok.Setter;

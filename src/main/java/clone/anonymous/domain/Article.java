@@ -1,7 +1,5 @@
-package clone.anonymous.article.entity;
+package clone.anonymous.domain;
 
-import clone.anonymous.accounts.entity.User;
-import clone.anonymous.core.entity.BaseEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
