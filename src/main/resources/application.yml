@@ -1,0 +1,44 @@
+server:
+  port: 81
+  servlet:
+    session: # url? ;JSESSIONID ???? ?? ?? ?
+      timeout: 30m
+      tracking-modes: cookie
+
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://127.0.0.1:3306/documents
+    username: sbsst
+    password: sbs123414
+
+  jpa:
+    generate-ddl: true
+    properties:
+      hibernate:
+#        show_sql: true
+        format_sql: true
+    hibernate:
+      ddl-auto: create # ??? ???? ??????? ??? entity ??
+    #      ddl-auto: none
+    database-platform: org.hibernate.dialect.MariaDB53Dialect
+
+  devtools:
+    livereload:
+      enabled: true
+
+  thymeleaf:
+    cache: false
+    enabled: true
+    prefix: file:src/main/resources/templates/ # ?? ?? ??? ?????? ?? ??
+    freemarker:
+      cache: false
+
+  servlet:
+    multipart: # multipart ?? ??? ???
+      max-request-size: 4GB
+      max-file-size: 4GB
+
+logging.level:
+  org.hibernate.SQL: debug
+#  org.hibernate.type: trace
