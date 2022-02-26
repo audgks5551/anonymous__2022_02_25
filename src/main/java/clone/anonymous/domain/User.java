@@ -31,4 +31,10 @@ public class User extends BaseEntity {
 
     // 비밀번호
     private String password;
+
+    public User(String username, String name, String password) {
+        this.username = username;
+        this.name = name;
+        this.password = password;
+    }
 }
