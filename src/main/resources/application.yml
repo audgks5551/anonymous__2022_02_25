@@ -42,6 +42,8 @@ spring:
   messages:
     basename: messages
 
+file.dir: /src/main/respirces/media/
+
 
 logging.level:
   org.hibernate.SQL: debug

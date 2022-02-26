@@ -9,7 +9,6 @@ import static javax.persistence.FetchType.LAZY;
 @Entity
 @Table(name = "UPLOAD_FILE")
 @Getter
-@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class UploadFile {
 
@@ -26,6 +25,11 @@ public class UploadFile {
 
     // 저장할 때의 파일 이름
     private String storeFileName;
+
+    public UploadFile(String uploadFileName, String storeFileName) {
+        this.uploadFileName = uploadFileName;
+        this.storeFileName = storeFileName;
+    }
 
     public void setArticle(Article article) {
         this.article = article;
