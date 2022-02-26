@@ -2,6 +2,7 @@ package clone.anonymous.domain;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -42,5 +43,14 @@ public class Article extends BaseEntity {
 
     // 좋아요 수
     private Long NumberOfLikes;
+
+    //== 연관관계 메서드 ==//
+
+    public void addUploadFile(UploadFile uploadFile) {
+        this.uploadFiles.add(uploadFile);
+        uploadFile.setArticle(this);
+    }
+
+
 }
 

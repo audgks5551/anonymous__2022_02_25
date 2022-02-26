@@ -2,6 +2,7 @@ package clone.anonymous.domain;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -11,6 +12,7 @@ import static lombok.AccessLevel.PROTECTED;
 @Getter
 @Table(name = "USER")
 @NoArgsConstructor(access = PROTECTED)
+@ToString(of = {"id", "username"})
 public class User extends BaseEntity {
 
     @Id

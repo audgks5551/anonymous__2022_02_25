@@ -35,9 +35,13 @@ spring:
       cache: false
 
   servlet:
-    multipart: # multipart ?? ??? ???
+    multipart:
       max-request-size: 4GB
       max-file-size: 4GB
+
+  messages:
+    basename: messages
+
 
 logging.level:
   org.hibernate.SQL: debug
