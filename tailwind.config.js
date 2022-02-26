@@ -1,9 +1,10 @@
 module.exports = {
   mode: "jit",
-  prefix: "t-",
-  content: ["./src/main/resources/**/*.{html,js}"],
+  content: ["./src/main/resources/templates/**/*.{html,js}"],
   theme: {
     extend: {},
   },
   plugins: [require("daisyui")],
 }
+
+//  prefix: "t-",

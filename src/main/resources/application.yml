@@ -1,5 +1,5 @@
 server:
-  port: 81
+  port: 83
   servlet:
     session:
       timeout: 30m
@@ -42,7 +42,7 @@ spring:
   messages:
     basename: messages
 
-file.dir: /src/main/respirces/media/
+file.dir: ./src/main/resources/media/file/
 
 
 logging.level:

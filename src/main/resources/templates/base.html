@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html th:fragment="layout (title, content)" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8">
+        <link th:href="@{/css/tailwind.output.css}" rel="stylesheet">
+
+        <title th:replace="${title}"></title>
+    </head>
+
+    <body class="flex h-screen">
+        <div class="min-w-min border-r border-white">
+            <ul class="menu bg-base-100 p-2">
+                <li class="justify-center items-center"><a class="px-[3rem]">유저</a></li>
+                <li class="justify-center items-center"><a class="px-[3rem]">게시물</a></li>
+                <li class="justify-center items-center"><a class="px-[3rem]">파일</a></li>
+            </ul>
+        </div>
+
+        <div class="w-full flex-1">
+            <div class="navbar bg-base-100">
+                <div class="flex-1">
+                    <a class="btn btn-ghost normal-case text-xl">관리자모드</a>
+                </div>
+                <div class="flex-none">
+                    <ul class="menu menu-horizontal p-0">
+                        <li><a>로그아웃</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div th:replace="${content}"></div>
+        </div>
+    </body>
+
+</html>
