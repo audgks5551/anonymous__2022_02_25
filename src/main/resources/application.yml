@@ -21,8 +21,8 @@ spring:
 #        show_sql: true
         format_sql: true
     hibernate:
-#      ddl-auto: create
-          ddl-auto: none
+      ddl-auto: create
+#          ddl-auto: none
     database-platform: org.hibernate.dialect.MariaDB53Dialect
 
   devtools:
