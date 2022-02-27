@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/file")
+public class fileController {
 
     @GetMapping
-    public String ListUser() {
-        return "user/user_list";
+    public String ListFile() {
+        return "file/file_list";
     }
 }

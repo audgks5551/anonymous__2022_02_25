@@ -11,9 +11,10 @@
     <body class="flex h-screen">
         <div class="min-w-min border-r border-white">
             <ul class="menu bg-base-100 p-2">
-                <li class="justify-center items-center"><a class="px-[3rem]">유저</a></li>
-                <li class="justify-center items-center"><a class="px-[3rem]">게시물</a></li>
-                <li class="justify-center items-center"><a class="px-[3rem]">파일</a></li>
+                <li class="justify-center items-center"><a class="px-[3rem]" th:href="@{/}">홈</a></li>
+                <li class="justify-center items-center"><a class="px-[3rem] " th:href="@{/user}">유저</a></li>
+                <li class="justify-center items-center"><a class="px-[3rem]" th:href="@{/article}">게시물</a></li>
+                <li class="justify-center items-center"><a class="px-[3rem]" th:href="@{/file}">파일</a></li>
             </ul>
         </div>
 
