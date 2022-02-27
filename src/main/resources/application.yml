@@ -12,8 +12,10 @@ spring:
     username: sbsst
     password: sbs123414
 
+  main:
+    allow-bean-definition-overriding: true
+
   jpa:
-    generate-ddl: true
     properties:
       hibernate:
 #        show_sql: true
@@ -25,6 +27,8 @@ spring:
 
   devtools:
     livereload:
+      enabled: true
+    restart:
       enabled: true
 
   thymeleaf:
@@ -48,3 +52,4 @@ file.dir: ./src/main/resources/media/file/
 logging.level:
   org.hibernate.SQL: debug
 #  org.hibernate.type: trace
+
