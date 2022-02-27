@@ -12,23 +12,13 @@
         <div class="min-w-min border-r border-white">
             <ul class="menu bg-base-100 p-2">
                 <li class="justify-center items-center"><a class="px-[3rem]" th:href="@{/}">홈</a></li>
-                <li class="justify-center items-center"><a class="px-[3rem] " th:href="@{/user}">유저</a></li>
+                <li class="justify-center items-center"><a class="px-[3rem]" th:href="@{/user/signup}">회원가입</a></li>
+                <li class="justify-center items-center"><a class="px-[3rem] " th:href="@{/user/list}">유저</a></li>
                 <li class="justify-center items-center"><a class="px-[3rem]" th:href="@{/article}">게시물</a></li>
                 <li class="justify-center items-center"><a class="px-[3rem]" th:href="@{/file}">파일</a></li>
             </ul>
         </div>
-
         <div class="w-full flex-1">
-            <div class="navbar bg-base-100">
-                <div class="flex-1">
-                    <a class="btn btn-ghost normal-case text-xl">관리자모드</a>
-                </div>
-                <div class="flex-none">
-                    <ul class="menu menu-horizontal p-0">
-                        <li><a>로그아웃</a></li>
-                    </ul>
-                </div>
-            </div>
             <div th:replace="${content}"></div>
         </div>
     </body>

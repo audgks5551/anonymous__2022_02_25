@@ -1,5 +1,6 @@
 package clone.anonymous.security.configs;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,10 +12,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import java.security.cert.Extension;
-
 @Configuration
 @EnableWebSecurity
+@Slf4j
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     // 사용자 생성
@@ -46,7 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests() // 요청 승인을 받는다
-                .antMatchers("/").hasRole("ADMIN")
+                .antMatchers("/", "/user/signup").permitAll()
                 .antMatchers("/user").hasRole("ADMIN")
                 .antMatchers("/article").hasRole("ADMIN")
                 .antMatchers("/file").hasRole("ADMIN")

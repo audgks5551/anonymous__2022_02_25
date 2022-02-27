@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html
+    th:replace="~{base :: layout(~{::title},~{::section})}"
+    data-theme="cupcake"
+    xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>signup</title>
+</head>
+
+<body>
+<section class="hero h-full bg-base-200">
+            <div class="hero-content w-full px-[15rem] flex flex-col">
+                <div>
+                    <span class="text-[2rem]">회원가입</span>
+                </div>
+                <div class="card flex-shrink-0 w-full shadow-2xl bg-base-100 px-[3rem]">
+                    <div class="card-body">
+                        <form th:action="@{/user/signup}" method="post">
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">이메일</span>
+                                </label>
+                                <input type="text" name="email" id="email" placeholder="이메일" class="input input-bordered">
+                            </div>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">사용자 이름</span>
+                                </label>
+                                <input type="text" name="username" id="username" placeholder="사용자 이름" class="input input-bordered">
+                            </div>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">성명</span>
+                                </label>
+                                <input type="text" name="name" id="name" placeholder="성명" class="input input-bordered">
+                            </div>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">비밀번호</span>
+                                </label>
+                                <input type="text" name="password" id="password" placeholder="비밀번호" class="input input-bordered">
+                            </div>
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">권한</span>
+                                </label>
+                                <input type="text" name="role" id="role" placeholder="권한" class="input input-bordered">
+                            </div>
+                            <div class="form-control mt-6">
+                                <button class="btn btn-primary">회원가입</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+</section>
+</body>
+</html>

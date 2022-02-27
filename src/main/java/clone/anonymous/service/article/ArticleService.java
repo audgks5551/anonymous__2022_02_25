@@ -1,4 +1,4 @@
-package clone.anonymous.service;
+package clone.anonymous.service.article;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
