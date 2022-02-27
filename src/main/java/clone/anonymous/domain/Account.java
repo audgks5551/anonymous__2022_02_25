@@ -10,15 +10,15 @@ import javax.persistence.*;
 import static lombok.AccessLevel.PROTECTED;
 
 @Entity
-@Getter @Setter
-@Table(name = "USER")
+@Getter
+@Table(name = "ACCOUNT")
 @NoArgsConstructor(access = PROTECTED)
 @ToString(of = {"id", "username"})
-public class User extends BaseEntity {
+public class Account extends BaseEntity {
 
     @Id
     @GeneratedValue
-    @Column(name = "USER_ID")
+    @Column(name = "ACCOUNT_ID")
     private Long id;
 
     // 이메일
@@ -36,9 +36,23 @@ public class User extends BaseEntity {
     // 권한
     private String role;
 
-    public User(String username, String name, String password) {
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setUsername(String username) {
         this.username = username;
+    }
+
+    public void setName(String name) {
         this.name = name;
+    }
+
+    public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

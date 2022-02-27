@@ -3,7 +3,7 @@ package clone.anonymous.domain.form;
 import lombok.Data;
 
 @Data
-public class UserForm {
+public class AccountForm {
 
     // 이메일
     private String email;

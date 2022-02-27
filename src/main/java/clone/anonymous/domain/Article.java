@@ -2,7 +2,6 @@ package clone.anonymous.domain;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -25,8 +24,8 @@ public class Article extends BaseEntity {
 
     // 유저
     @ManyToOne(fetch = LAZY)
-    @JoinColumn(name = "USER_ID")
-    private User user;
+    @JoinColumn(name = "ACCOUNT_ID")
+    private Account account;
 
     // 업로드 파일들
     @OneToMany(mappedBy = "article")

@@ -1,5 +1,6 @@
 package clone.anonymous.security.configs;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
@@ -9,23 +10,33 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
 @Slf4j
+@RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    // 사용자 생성
+    private final UserDetailsService userDetailsService;
+
+    // 임시 사용자 생성
+//    @Override
+//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//
+//        String password = passwordEncoder().encode("1111");
+//
+//        auth.inMemoryAuthentication().withUser("user").password(password).roles("USER");
+//        auth.inMemoryAuthentication().withUser("manager").password(password).roles("MANAGER", "USER");
+//        auth.inMemoryAuthentication().withUser("admin").password(password).roles("ADMIN", "USER", "MANAGER");
+//    }
+
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-
-        String password = passwordEncoder().encode("1111");
-
-        auth.inMemoryAuthentication().withUser("user").password(password).roles("USER");
-        auth.inMemoryAuthentication().withUser("manager").password(password).roles("MANAGER", "USER");
-        auth.inMemoryAuthentication().withUser("admin").password(password).roles("ADMIN", "USER", "MANAGER");
+        auth.userDetailsService(userDetailsService);
     }
 
     // 패스워드 암호화
@@ -47,6 +58,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests() // 요청 승인을 받는다
                 .antMatchers("/", "/user/signup").permitAll()
+                .antMatchers("/user/list").hasRole("ADMIN")
                 .antMatchers("/user").hasRole("ADMIN")
                 .antMatchers("/article").hasRole("ADMIN")
                 .antMatchers("/file").hasRole("ADMIN")

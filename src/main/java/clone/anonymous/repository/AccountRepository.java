@@ -1,11 +1,12 @@
 package clone.anonymous.repository;
 
-import clone.anonymous.domain.User;
+import clone.anonymous.domain.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface AccountRepository extends JpaRepository<Account, Long> {
+
+    Account findByUsername(String username);
+
 }

@@ -1,9 +1,10 @@
 package clone.anonymous.controller;
 
-import clone.anonymous.domain.User;
-import clone.anonymous.domain.form.UserForm;
-import clone.anonymous.service.user.UserService;
+import clone.anonymous.domain.Account;
+import clone.anonymous.domain.form.AccountForm;
+import clone.anonymous.service.user.AccountService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -14,10 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/user")
 @RequiredArgsConstructor
-public class UserController {
+@Slf4j
+public class AccountController {
 
     private final PasswordEncoder passwordEncoder;
-    private final UserService userService;
+    private final AccountService accountService;
 
     @GetMapping("/list")
     public String ListUser() {
@@ -30,12 +32,12 @@ public class UserController {
     }
 
     @PostMapping("/signup")
-    public String createUser(UserForm userForm) {
+    public String createUser(AccountForm userForm) {
 
         ModelMapper modelMapper = new ModelMapper();
-        User user = modelMapper.map(userForm, User.class); // form -> entity
+        Account user = modelMapper.map(userForm, Account.class); // form -> entity
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        userService.createUser(user);
+        accountService.createUser(user);
 
         return "redirect:/";
     }
